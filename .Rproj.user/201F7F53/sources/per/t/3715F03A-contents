@@ -1,0 +1,313 @@
+
+for(x in 1:100){
+  if(x%%2 != 0){
+    print(x)
+  }
+}
+
+str <- "Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."
+
+str
+
+
+#?"" #//SABEr QUE HACE UNA FUNCION
+#args()#//dentro se ingresa la funcion 
+#para saber que argumentos recibe
+
+texto <- "Hola mundo"
+texto.corto <- "hola"
+texto_corto <- "hola"
+textoCorto <- "hola"
+#class() #saber que tipo es una variable
+
+numero <- 6
+numero2 <- 10+30
+numero2 <- numero2-numero
+
+library(Lock5Data)
+data(HappyPlanetIndex)
+attach(HappyPlanetIndex)
+plot(Happiness,LifeExpectancy,pch=19,col="red")
+#ctrl + l para limpiar consola
+
+#eliminar variables con rm(nombre_variable)
+#eliminar todas las variables rm(list = ls())
+ls()
+
+#Vectores
+vector <- c("chi","cheñol","dia de platano")
+vector2 <- c(1,2,3,4,5,6)
+vector3 <-c(T,F,T,T,F,F)
+vector4 <- c('a','b','x','d')
+vector5 <- c(TRUE,10,"HOLA")
+vector6 <- c(F,2,"HOLA",4.25)
+#AL TENER STRING SIMEPRE LO CONVERTIRA A STRING
+#AÑADIR NUEVO VALOR A VECTOR
+vector6 <- c(vector6,"CHI CHEÑOL")
+print(vector6)
+vector6 <- c(vector6,'y')
+print(vector6)
+#crear secuencia de datos 1:10
+1:90
+
+#agregar encabezados a los valores de un valor
+meses <- c("Enero","Febrero","Marzo")
+ventas <- c(100,120,80)
+names(ventas) <- meses
+print(ventas)
+#operaciones entre vectores
+vector1 <- c(1,4,6)
+vector2 <- c(2,8,3)
+print(vector1 + vector2)
+vector.resultado <- vector1 + vector2
+print(vector.resultado)
+#sumar elementos del vector
+res <- sum(vector1)
+print(res)
+#media de datos del vector
+#mean()
+#desviacion estandas
+#sd()
+#numero maximo y minimo del vector
+#max(),min()
+#producto de todos los datos del vector
+#prod()
+#comparar vectores
+print(vector1 < vector2)
+vector1 <- 1:7
+print(vector1)
+vector1[7]
+#acceder a ciertas posiciones
+#vector1[c(2,4,5)]
+nombres <- c('a','b','c','d','e','f','g','h')
+names(vector1) <- nombres
+print(vector1)
+vector['b']
+vector1[vector1 > 3]
+filtro <-(vector1>=4)
+vector[filtro]
+
+
+#Ejercicio 1
+ventas <- c(120,140,90,75,110)
+meses <- c("Enero","Febrero","Marzo","Abri","Mayo")
+names(ventas) <- meses
+print(ventas)
+media.ventas <- mean(ventas)
+print(media.ventas)
+ventas.mayores.100 <- ventas[ventas>100]
+print(ventas.mayores.100)
+filtro <- (ventas==max(ventas))
+print(filtro)
+ventas[filtro]
+#print(ventas[filtro])
+#ventas[which.max(mayoresventas)]
+#ventas[filtro]
+
+#Matrices
+matris <- matrix(c(1:10),nrow = 2,byrow = TRUE)
+#BYROW TRUE ordenas los datos
+print(matris)
+matris1 <- matrix(c(1:10),nrow = 3,ncol = 4)
+matris2 <- matrix(c(1:10),nrow = 3,ncol = 4, byrow = T)
+print(matris2)
+
+#Otra forma de crear matris
+vector <- 1:4
+vector2 <- 5:8
+vector3 <- 9:12
+
+matriz <- rbind(vector,vector2,vector3)
+print(matriz)
+matriz2 <- cbind(vector,vector2,vector3)
+print(matriz2)
+
+v1 <- c(NA,1,2)
+v2 <- c(3,4,NA)
+matriz<-rbind(v1,v2)
+dim(matriz)
+
+empresa1 <- c(100,80,90)
+empresa2 <- c(50,120,80)
+meses <- c('ENERO','FEBRERO','MARZO')
+ventas <- c(empresa1,empresa2)
+print(ventas)
+matriz.ventas <- matrix(ventas,nrow=2,byrow = T)
+print(matriz.ventas)
+mat.ve <- rbind(empresa1,empresa2)
+print(mat.ve)
+colnames(matriz.ventas) <- meses
+print(matriz.ventas)
+
+empresas <- c('OXXO','7ELEVEN')
+rownames(matriz.ventas) <- empresas
+print(matriz.ventas)
+colSums(matriz.ventas)
+rowSums(matriz.ventas)
+rowMeans(matriz.ventas)
+colMeans(matriz.ventas)
+
+matriz.ventas[1,1]
+matriz.ventas[1,]
+matriz.ventas[,2]
+matriz.ventas[,2:3]
+
+animales <-c('perro','gato','mono','perro','gato')
+#Menciona las categorias de un vector
+factor(animales)
+  plot(1:10)
+  #Obtener cuantos elementos de las categorias hay
+  summary(factor(animales))
+  temp <- c('frio','templado','frio','caliente','caliente','frio')
+  print(temp)
+  temp.orden <- factor(temp,ordered = T,levels = c('frio','templado','caliente'))
+  factor(temp.orden)
+  summary(temp.orden)
+
+  #Ejercicio 2
+  #1
+  v1 <-c(4,10,5,3)
+  v2 <- c(2,8,25,14)
+#2
+matriz.number <- matrix(1:24,nrow=6,ncol=4,byrow = T)
+print(matriz.number)
+#3
+matriz.number[3,4]
+#4
+
+matriz.primeros <- matriz.number[1:3,1:2]
+print(matriz.primeros)
+#5
+rowSums(matriz.primeros)
+ cbind(matriz.primeros,rowSums(matriz.primeros))
+print(matriz.primeros)
+
+
+#DATAFRAME tipo de dato como una hoja de calculo
+#similar a una matriz, con columnas de diferentes tipos
+
+#iris mide el ancho y largo de las hojas de flores
+iris
+data() #ver los dataframes que contiene
+
+#Crear un dataframe
+meses <- c('enero','febrero','marzo')
+ventas <- c(120,100,80)
+objetivos <- c(TRUE,FALSE,TRUE)
+
+datos <- data.frame(meses,ventas,objetivos)
+print(datos)
+#str da mas informacion de los tipos de datos de las columnas
+str(datos)
+#un resumen de los datos
+summary(datos)
+AirPassengers
+#primero 5 datos
+head(AirPassengers)
+#ultimos 5 datos
+tail(AirPassengers)
+datos[,1]
+datos[2,'objetivo']
+
+#subconjunto el conjunto total de datos
+subset(datos,subset = ventas <= 100)
+orden <- order(datos['ventas'])
+datos[orden,]
+#ordena menor a myor posible solo con el sgimo de menos
+orden.de <- order(-datos['ventas'])
+datos[orden.de]
+datos[1,'ventas']
+
+#devolver los datos como un vector
+#
+datos$ventas
+
+numeros <- 1:10
+letras <- letters[1:10]
+
+data <- data.frame(col1 = numeros, col2 = letras)
+print(data)
+#guardar en csv lo guardar en la misma direccion del .r
+write.csv(
+  data,file = 'data.csv'
+)
+
+#extraer los datos del csv
+datos2 <- read.csv('data.csv')
+print(datos2)
+datos2$X <- NULL
+print(datos2)
+datos1 <- data.frame(numeros,letras)
+print(datos1)
+datos2 <- data.frame(numeros = 11, letras = 'k')
+print(datos2)
+datos3 <- rbind(datos1,datos2)
+print(datos3)
+datos3 $ multiplicacion <- datos3$numeros*2
+print(datos3)
+#saber nombre de columnas
+colnames(datos3)
+#asignar nuevos nombres de columnas
+colnames(datos3) <- c('c1','c2','c3')
+print(datos3)
+#cambiar un nombre
+colnames(datos3)[3] <- 'Nuevo'
+print(datos3)
+#obtener los datos mayores a 6
+datos3[datos3$c1>6,]
+
+
+#Ejercicio 1
+personas <- c('Antonio','Maria','Juan')
+edad <- c(40,30,35)
+sexo <- c('M','F','M')
+
+infoPersonas <- data.frame(personas,edad,sexo)
+print(infoPersonas)
+
+#Ejercicio 2
+#Menciona las categorias de un vector
+factor(animales)
+plot(1:10)
+#Obtener cuantos elementos de las categorias hay
+summary(factor(animales))
+temp <- c('frio','templado','frio','caliente','caliente','frio')
+print(temp)
+temp.orden <- factor(temp,ordered = T,levels = c('frio','templado','caliente'))
+factor(temp.orden)
+summary(temp.orden)
+str(iris)
+nrow(iris['Species'])
+factor(iris)
+#1
+summary(factor(iris$Species))
+#2
+filtro <- (iris$Species=='setosa')
+sd(iris$Sepal.Length[filtro],na.rm = TRUE)
+sd(iris$Sepal.Width[filtro],na.rm = TRUE)
+sd(iris$Petal.Length[filtro],na.rm = TRUE)
+sd(iris$Petal.Width[filtro],na.rm = TRUE)
+
+iris$lat_sd <- ave(iris$Sepal.Length, iris$Sepal.Width,iris$Petal.Width, FUN=sd)
+print(iris$lat_sd)
+
+sapply(iris[c('Sepal.Length','Sepal.Width','Petal.Lenght','Petal.Width')], sd)
+#3
+sd(iris$Petal.Width[filtro],na.rm = TRUE)
+filtro <- (iris$Species=='setosa')
+
+#4
+filtro <- (iris$Species=='setosa')
+filtro1 <- (iris$Species=='versicolor')
+filtro2 <- (iris$Species=='virginica')
+sd(iris$Petal.Width[filtro],na.rm = TRUE)
+sd(iris$Petal.Width[filtro1],na.rm = TRUE)
+sd(iris$Petal.Width[filtro2],na.rm = TRUE)
+
+
+
+
+
