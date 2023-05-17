@@ -3,6 +3,7 @@
 #LIST, DATAFRAME
 #DATAFRAME ES un conjunto de vectores
 #Las observaciones son registros
+#Las columnas son variables
 precio = 100
 
 if(precio < 100){
@@ -136,6 +137,19 @@ glimpse(maraton)
 
 #Resumen de la información 
 summary(maraton)
+
+#Es para ver los primeros registros de nuestro dataframe, podemos especificar cuantos
+#Si no solo dejamos sola sin el numero
+head(maraton , 3)
+
+#Es para ver los últimos 3, aplica lo mismo de arriba
+
+tail(maraton, 3)
+
+install.packages("RWeka")
+library("RWeka")
+
+datos <- read.arff("CEE_DATA.arff")
 
 
 
