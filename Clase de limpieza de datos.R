@@ -38,7 +38,7 @@ sum(contaminacion$CN) #-> Si sumas valores enteros con vacíos, obviamente te va
 sum(contaminacion$CN, na.rm = TRUE)# na.rm remueve a los vacíos
 
 contaminacion$CN_p <- ifelse(is.na(contaminacion$CN),#Busca los vacíos
-                             mean(contaminacion$CN, na.rm = TRUE),#LOs rellena con el promedio
+                               mean(contaminacion$CN, na.rm = TRUE),#LOs rellena con el promedio
                              contaminacion$CN)#Los valores que no estan vacíos les pone el mismo valor
 
 contaminacion
