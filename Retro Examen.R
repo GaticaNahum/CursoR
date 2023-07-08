@@ -89,7 +89,11 @@ library("dplyr")
 resumen <- post_data %>%
   group_by(category) %>%
   summarize(total_comments = sum(comments))
+
 resumen[which.max(resumen$total_comments),1]
+
+resumen %>% slice_max(order_by = total_comments) %>%
+  pull(category)
 
 #En promedio, ¿cuántas vistas tiene la categorìa Visualization?.
 
