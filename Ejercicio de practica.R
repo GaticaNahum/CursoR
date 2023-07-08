@@ -35,8 +35,8 @@ pizzas <- read.csv("pizzaplace.csv",
 View(pizzas)
 
 print("Obtener los distintos tipos de pizza")
-tipos <- factor(pizzas$type)
-nlevels(tipos)
+tipos <- factor(pizzas$type) #Sacamos los tipos
+nlevels(tipos) #Nos da el numeor de categorias de lo anterior
 
 #Obtener la pizza mas cara
 pizzas[which.max(pizzas$price), 5]

@@ -48,7 +48,7 @@ boxplot(rivers)
 
 variable <- boxplot.stats(rivers)
 nuevo <- rivers
-while(length(variable$out)>0)
+while(length(variable$out)>0){
   inferior <- variable$stats[1]
   superior <- variable$stats[5]
   nuevo<-nuevo[nuevo < superior & nuevo > inferior]
