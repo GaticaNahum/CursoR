@@ -98,3 +98,16 @@ ggplot (datos_test_clasificacion,#  Datos
   geom_point(size = 7) + #Dibujar un punto por cada valor que le damos
   geom_text(aes(label = Clase)) + ##Agrega la clasificacion a cada punto
   theme(legend.position = "none") # quitar la clasificacion del lado derecho
+
+#Matriz de confusion
+# Tabla de todos contra todos
+tab <- table(clasificacion, clase_test) #Verifica lo que hace knn contra lo real, si vemos tab, aparece la matriz de confusion
+diag(tab) #La suma de la diagonal
+rowSums(tab) #Suma todas las columnas
+# val.clasificados correctmanete / total val
+# accuracy / precisión
+accurancy <- function(tabla){
+  sum(diag(tabla)/sum(rowSums(tabla)))*100
+}
+
+accurancy(tab)
