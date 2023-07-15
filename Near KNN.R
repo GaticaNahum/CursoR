@@ -111,3 +111,9 @@ accurancy <- function(tabla){
 }
 
 accurancy(tab)
+
+
+# Carga, limpieza, transformación 
+# Transformación -> Escalamiento, Normalización, Generalización
+# Regresión: lineal (simple, multiple), polinomial
+# -> Con lm, y a mano (Excel) -> regresión con esto
