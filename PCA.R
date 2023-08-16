@@ -25,6 +25,6 @@ pc3 <- apply(pca$rotation[,3]*datos,1,sum)
 pc4 <- apply(pca$rotation[,4]*datos,1,sum)
 
 datospca <-data.frame(cbind(PC1,PC2,PC3,PC4))
-View(datospca)
+View(datospca[,1:2])
 
 summary(pca)
